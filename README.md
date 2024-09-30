@@ -1,0 +1,1 @@
+A python script that generates a convenient C/C++ project with a pre-configured CMake setup for a single target
