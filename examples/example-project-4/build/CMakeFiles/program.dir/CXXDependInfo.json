@@ -1,0 +1,21 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "Clang",
+	"compiler-simulate-id" : "MSVC",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-4/build",
+	"dir-cur-src" : "C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-4",
+	"dir-top-bld" : "C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-4/build",
+	"dir-top-src" : "C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-4",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"C:\\Users\\mtuna\\Desktop\\Project-Generator\\examples\\example-project-4\\example-project-4\\include"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-4/build/CMakeFiles/program.dir"
+}

@@ -1,0 +1,3 @@
+C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-4/build/CMakeFiles/program.dir
+C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-4/build/CMakeFiles/edit_cache.dir
+C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-4/build/CMakeFiles/rebuild_cache.dir

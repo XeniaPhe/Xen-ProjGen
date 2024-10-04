@@ -1,0 +1,273 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-4/out/bin/Debug/program.exe"
+		},
+		{
+			"path" : "C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-4/out/bin/Debug/program.pdb"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"add_exec_target",
+			"target_compile_options",
+			"target_compile_definitions",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"utils/functions.cmake",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 52,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 139,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 143,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 142,
+				"parent" : 1
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 140,
+				"parent" : 1
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O0 -std=gnu++20 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-O0"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-g3"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wconversion"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wdouble-promotion"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wno-unused-parameter"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wno-unused-function"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wno-unused-result"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wno-sign-conversion"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wfloat-equal"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wundef"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wpointer-arith"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wcast-align"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wstrict-prototypes"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wmissing-prototypes"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wwrite-strings"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wcast-qual"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wswitch-default"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wswitch-enum"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Werror=return-type"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Werror=implicit-function-declaration"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Werror=incompatible-pointer-types"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wformat=2"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wuninitialized"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wunreachable-code-aggressive"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 4,
+					"define" : "CLANG_COMPILER"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "DEBUG"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "WINDOWS"
+				},
+				{
+					"backtrace" : 4,
+					"define" : "WORD_SIZE_64"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 5,
+					"path" : "C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-4/example-project-4/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "program::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Xlinker /subsystem:console",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-fuse-ld=lld-link",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "program",
+	"nameOnDisk" : "program.exe",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "example-project-4/src/main.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

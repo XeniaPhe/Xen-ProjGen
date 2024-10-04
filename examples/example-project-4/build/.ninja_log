@@ -1,0 +1,7 @@
+# ninja log v6
+6	855	7497696069048214	CMakeFiles/program.dir/example-project-4/src/main.cpp.obj.ddi	47bd87d2e7fcce7b
+855	889	7497696077820983	CMakeFiles/program.dir/CXX.dd	91b3b9597fe66af2
+855	889	7497696077820983	C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-4/build/CMakeFiles/program.dir/CXXModules.json	91b3b9597fe66af2
+855	889	7497696077820983	CMakeFiles/program.dir/example-project-4/src/main.cpp.obj.modmap	91b3b9597fe66af2
+895	1763	7497696077938983	CMakeFiles/program.dir/example-project-4/src/main.cpp.obj	8b47aee1491da6dd
+1767	1886	7497696086592720	C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-4/out/bin/Debug/program.exe	2f6ec3b8f732d80c

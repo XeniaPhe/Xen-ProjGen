@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-1/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -DDEBUG -DGCC_COMPILER -DWINDOWS -DWORD_SIZE_64 -IC:/Users/mtuna/Desktop/Project-Generator/examples/example-project-1/example-project-1/include -g -std=gnu99 -O0 -g3 -Wall -Wextra -Wconversion -Wdouble-promotion -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -Wno-sign-conversion -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wstrict-overflow=4 -Wwrite-strings -Wcast-qual -Wswitch-default -Wswitch-enum -Werror=return-type -Werror=implicit-function-declaration -Werror=incompatible-pointer-types -Wformat=2 -Wuninitialized -Wunreachable-code -o CMakeFiles\\example-project-1.dir\\example-project-1\\src\\main.c.obj -c C:\\Users\\mtuna\\Desktop\\Project-Generator\\examples\\example-project-1\\example-project-1\\src\\main.c",
+  "file": "C:\\Users\\mtuna\\Desktop\\Project-Generator\\examples\\example-project-1\\example-project-1\\src\\main.c",
+  "output": "CMakeFiles\\example-project-1.dir\\example-project-1\\src\\main.c.obj"
+}
+]

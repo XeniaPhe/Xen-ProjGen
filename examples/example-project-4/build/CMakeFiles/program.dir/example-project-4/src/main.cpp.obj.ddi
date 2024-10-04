@@ -1,0 +1,9 @@
+{
+  "revision": 0,
+  "rules": [
+    {
+      "primary-output": "CMakeFiles\\program.dir\\example-project-4\\src\\main.cpp.obj"
+    }
+  ],
+  "version": 1
+}

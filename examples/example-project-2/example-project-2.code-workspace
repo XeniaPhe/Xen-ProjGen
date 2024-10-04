@@ -1,0 +1,16 @@
+{
+    "folders": [
+        {
+            "name": "example-project-2",
+            "path": "."
+        },
+        // {
+        //     "name": "include",
+        //     "path": "./src/include"
+        // },
+        // {
+        //     "name": "src",
+        //     "path": "./src"
+        // }
+    ]
+}

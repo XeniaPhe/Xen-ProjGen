@@ -1,0 +1,7 @@
+# ninja log v6
+6	360	7497694344509262	CMakeFiles/example-library.dir/src/main.cpp.obj	c648777d92706595
+363	507	7497694349412887	C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-2/out/lib/Debug/libexample-library.dll	8a04f0c5360618ba
+363	507	7497694349412887	C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-2/out/lib/Debug/libexample-library.dll.a	8a04f0c5360618ba
+16	1165	7497694926491747	CMakeFiles/example-library.dir/src/main.cpp.obj	4fed8cd2f0bb076e
+1167	1310	7497694939198749	C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-2/out/lib/Debug/example-library.dll	76dc8fe54e08c14b
+1167	1310	7497694939198749	C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-2/out/lib/Debug/example-library.lib	76dc8fe54e08c14b

@@ -1,0 +1,94 @@
+{
+    "version": "0.2.0",
+    "configurations": [   
+        {
+            "name": "gdb-debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/out/bin",
+            "environment": [
+                {
+                    "name": "PROJECT_PATH",
+                    "value": "${env:PROJECT_PATH}:${command:cmake.getLaunchTargetDirectory}"
+                }
+            ],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "lldb-debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/out/bin",
+            "environment": [
+                {
+                    "name": "PROJECT_PATH",
+                    "value": "${env:PROJECT_PATH}:${command:cmake.getLaunchTargetDirectory}"
+                }
+            ],
+            "externalConsole": true,
+            "MIMode": "lldb"
+        },
+        {
+            "name": "msvc-debug",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/out/bin",
+            "environment": [
+                {
+                    "name": "PROJECT_PATH",
+                    "value": "${env:PROJECT_PATH}:${command:cmake.getLaunchTargetDirectory}"
+                }
+            ],
+            "externalConsole": true
+        },
+        {
+            "name": "ctest-launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/out/bin",
+            "environment": [
+                {
+                    "name": "PROJECT_PATH",
+                    "value": "${env:PROJECT_PATH}:${command:cmake.getLaunchTargetDirectory}"
+                }
+            ],
+            "externalConsole": true
+        },
+        {
+            "name": "ctest-debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/out/bin",
+            "program": "${cmake.testProgram}",
+            "args": [ "${cmake.testArgs}"],
+        },
+        {
+            "name": "ctest-msvc-debug",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/out/bin",
+            "program": "${cmake.testProgram}",
+            "args": [ "${cmake.testArgs}"],
+        }
+    ]
+}
