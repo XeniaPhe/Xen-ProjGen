@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20241004-1826-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.30.0-rc3"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="Xenia"
+	OSRelease=" Professional"
+	OSVersion=" (Build 22631)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="5"
+	ProcessorCacheSize="-1"
+	NumberOfLogicalCPU="12"
+	NumberOfPhysicalCPU="6"
+	TotalVirtualMemory="20347"
+	TotalPhysicalMemory="16251"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2592"
+	>
+	<Testing>
+		<StartDateTime>Oct 04 21:26 T[NON-UTF-8-BYTE-0xFC]rkiye Standard Time</StartDateTime>
+		<StartTestTime>1728066360</StartTestTime>
+		<TestList/>
+		<EndDateTime>Oct 04 21:26 T[NON-UTF-8-BYTE-0xFC]rkiye Standard Time</EndDateTime>
+		<EndTestTime>1728066360</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

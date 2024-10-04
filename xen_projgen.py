@@ -28,6 +28,13 @@ ProjectConfig = namedtuple('ProjectConfig', [
     'should_commit_git'
 ])
 
+reserved_names = {'com1', 'com2', 'com3', 'com4', 'com5', 'com6', 'com7', 'com8', 'com9',
+                      'lpt1', 'lpt2', 'lpt3', 'lpt4', 'lpt5', 'lpt6', 'lpt7', 'lpt8', 'lpt9',
+                      'con', 'prn', 'aux', 'nul', ''}
+
+illegal_file_names = {'src', 'include', 'test', 'libs', 'build',
+                       'out', 'project', 'config', 'utils', '.vscode', '.git'}
+
 def message(msg: str):
     print(f'## {msg}')
 
@@ -65,33 +72,38 @@ def choose_one_of(msg: str, choices: List[str]) -> str:
                 return choices[index]
             
         warning('Invalid choice, please try again.')
-
-def sanitize_file_name(name: str, is_target: bool = False) -> str:
-    sanitized_name = re.sub(r'[^a-zA-Z0-9._-' + f'{'+' if is_target else ''}]', '-', name)
-    sanitized_name = re.sub(r'\s+', '-', sanitized_name).strip('-')
-    sanitized_name = re.sub(r'-+', '-', sanitized_name)
-
-    if is_target:
-        sanitized_name = re.sub(r'\++', '+', sanitized_name).strip('+')
-
-    if sanitized_name and sanitized_name[0].isdigit():
-        sanitized_name = '_' + sanitized_name
-
-    if len(sanitized_name) > 255:
-        sanitized_name = sanitized_name[:255]
-
-    reserved_names = {"","CON", "PRN", "AUX", "NUL", "COM1", "COM2", "COM3", "COM4",
-                      "COM5", "COM6", "COM7", "COM8", "COM9", "LPT1", "LPT2", 
-                      "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8", "LPT9"}
-
-    if not is_target:
-        reserved_names.update({'src', 'include', 'test', 'libs', 'build', 'out', 'project',
-                               'config', 'utils', '.vscode', '.git'})
     
-    if sanitized_name.upper() in reserved_names:
-        sanitized_name = '_' + sanitized_name
+def sanitize_file_name(name: str) -> str:
+    name = re.sub(r'[^a-zA-Z0-9._-]', '-', name)
+    name = re.sub(r'\s+', '-', name).strip('-')
+    name = re.sub(r'-+', '-', name)
+    name = re.sub(r'\.+', '.', name)
 
-    return sanitized_name
+    if len(name) > 127:
+        name = name[:127]
+    elif name.lower() in reserved_names or name.lower() in illegal_file_names:
+        name = '_' + name
+
+    return name
+
+def sanitize_target_name(name: str) -> str:
+    name = re.sub(r'[^a-zA-Z0-9._+-]', '-', name)
+    name = re.sub(r'\s+', '-', name).strip('-')
+    name = re.sub(r'\++', '+', name).strip('+')
+    name = re.sub(r'-+', '-', name)
+    name = re.sub(r'\.+', '.', name)
+    name = re.sub(r'-\+|\+-', '-', name)
+    name = re.sub(r'-+', '-', name).strip('-')
+
+    if name and name[0].isdigit():
+        name = '_' + name
+
+    if len(name) > 127:
+        name = name[:127]
+    elif name.lower() in reserved_names:
+        name = '_' + name
+
+    return name
 
 def gen_dir(cwd: str, dir_name: str) -> str:
     dir_path = os.path.join(cwd, dir_name)
@@ -102,7 +114,7 @@ def gen_file(cwd: str, file_name: str, content: str) -> str:
     file_path = os.path.join(cwd, file_name)
 
     try:
-        with open(file_path, 'w') as file:
+        with open(file_path, 'w', encoding = 'utf-8') as file:
             file.write(content)
     except Exception as e:
         print(f'Error creating file {file_path}: {e}')
@@ -1067,8 +1079,8 @@ msvc:
     config_dir = gen_dir(cwd, 'config')
     gen_file(config_dir, 'compiler_flags.yaml', compiler_flags_yaml)
     gen_file(config_dir, 'definitions.txt', '')
-    gen_file(config_dir, 'compiler_features.txt')
-    gen_file(config_dir, 'linker_flags.txt')
+    gen_file(config_dir, 'compiler_features.txt', '')
+    gen_file(config_dir, 'linker_flags.txt', '')
 
 def gen_workspace_file(cwd: str, conf: ProjectConfig):
     if not conf.should_gen_workspace_file:
@@ -1666,7 +1678,7 @@ def preview_proj(conf: ProjectConfig):
             print(line + space + leaf + 'functions.cmake')
     else:
         print(branch + 'config/')
-        print(line + branch + 'compiler_features.tct')
+        print(line + branch + 'compiler_features.txt')
         print(line + branch + 'compiler_flags.yaml')
         print(line + branch + 'definitions.txt')
         print(line + leaf + 'linker_flags.txt')
@@ -1776,9 +1788,9 @@ proj_name = sanitize_file_name(get_input('Project name: '))
 target_name_is_proj_name = yes_or_no('Target name matches project name')
 
 if target_name_is_proj_name:
-    target_name = proj_name
+    target_name = sanitize_target_name(proj_name)
 else:
-    target_name = sanitize_file_name(get_input('Target name: '), True)
+    target_name = sanitize_target_name(get_input('Target name: '))
 
 target_type = choose_one_of('Target type', ['Executable', 'Dynamic Library', 'Static Library'])
 

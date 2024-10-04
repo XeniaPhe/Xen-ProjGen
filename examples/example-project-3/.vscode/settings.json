@@ -1,0 +1,12 @@
+{
+    "cmake.sourceDirectory": ["${workspaceFolder}"],
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.preferredGenerators": [
+            "Ninja",
+            "Unix Makefiles",
+            "Visual Studio 17 2022"
+        ],
+    "cmake.debugConfig": {
+        "args": [],
+    }
+}

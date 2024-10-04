@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/mtuna/Desktop/Project-Generator/examples/example-project-3/build",
+  "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -DCLANG_COMPILER -DDEBUG -DWINDOWS -DWORD_SIZE_64 -O0 -std=gnu++17 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview -O0 -g3 -Wall -Wextra -Wconversion -Wdouble-promotion -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -Wno-sign-conversion -Wfloat-equal -Wundef -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Wcast-qual -Wswitch-default -Wswitch-enum -Werror=return-type -Wformat=2 -Wuninitialized -Wunreachable-code-aggressive -o CMakeFiles\\example-project-3.dir\\src\\main.cpp.obj -c C:\\Users\\mtuna\\Desktop\\Project-Generator\\examples\\example-project-3\\src\\main.cpp",
+  "file": "C:\\Users\\mtuna\\Desktop\\Project-Generator\\examples\\example-project-3\\src\\main.cpp",
+  "output": "CMakeFiles\\example-project-3.dir\\src\\main.cpp.obj"
+}
+]
