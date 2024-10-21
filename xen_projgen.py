@@ -1170,8 +1170,8 @@ license: "MIT License"
 github: "https://github.com/XeniaPhe/Xen-ProjGen"
 description: "Documentation"
 ```
-Welcome to the documentation of ***Xen ProjGen***! Xen Projgen is a simple python script that generates simple and highly customizable CMake C/C++ projects with single targets. It is aimed to eliminate the setup step for small and simple projects but it can also be used as a stepping stone for larger projects with more complex needs such as multiple targets, toolchain and preset files, cross-compiling, multi-step building etc. This guide should help you understand how to effectively work with this generated project structure.
-### **Table Of Contents**
+Welcome to the documentation of ***`Xen ProjGen`***! Xen ProjGen is a python script that generates cross-platform, easy-to-use C/C++ projects with pre-configured CMake setups for single targets. It is aimed to eliminate the setup step for small and simple projects but it can also be used as a stepping stone for larger projects with more complex needs such as multiple targets, toolchain and preset files, cross-compiling, multi-step building etc. This guide should help you understand how to effectively work with this generated project structure.
+### **`Table Of Contents`**
 1. [**`Building The Project`**](building.md)
 2. [**`Configuration`**](configuration.md)
 3. [**`Linking Libraries`**](libraries.md)
@@ -1186,13 +1186,13 @@ Welcome to the documentation of ***Xen ProjGen***! Xen Projgen is a simple pytho
 [`Next Page -->`](configuration.md)
 <h2 style="text-align: center; color: #ff9400;">Building The Project</h2>
 
-### **Prerequisites**
+### **`Prerequisites`**
 To be able to build your project, you have to have at least **CMake 3.15**, **Python3** and any one of the **GCC**, **Clang**, and **MSVC** compilers installed and added to the **PATH** on your system.
-### **Supported Platforms**
-Since the project structure is fully self-contained and does not include any platofrm-specific code or features, it should be platform-agnostic and work across different operating systems, including Windows, Linux and macOS. However, it has only been tested on Windows.
-### **1 - Building With CMake Tools**
+### **`Supported Platforms`**
+Since the project structure is fully self-contained and does not include any platform-specific code or features, it should be platform-agnostic and work across different operating systems, including Windows, Linux and macOS. However, it has only been tested on Windows.
+### **`1 - Building With CMake Tools`**
 If you are using Visual Studio Code to develop your project, you can simply install the CMake Tools extension and use its GUI to configure, build and run the project. This really adds it an IDE-like experience where you can focus on developing and leave the rest to the CMake Tools.
-### **2 - Building From The Terminal**
+### **`2 - Building From The Terminal`**
 Build pipeline of this project is not anything complicated. You can simply configure CMake with the generator and compiler of your choice along with the build type and any other variables you want to set. You can then build it using the *`cmake --build`* command or the build command of the build system you are using. Although building with CMake Tools is easier and quicker, you can gain more control over the build process by using the terminal to build the project. This allows you to make use of toolchain files, preset files, and pass custom or specific flags to CMake, which can be particularly useful for cross-compiling, fine-tuning build configurations, or setting up advanced options not readily accessible through the CMake Tools UI.
 
 [`<-- Prev Page`](readme.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1206,7 +1206,7 @@ Build pipeline of this project is not anything complicated. You can simply confi
 <h2 style="text-align: center; color: #ff9400;">Configuration</h2>
 
 Inside the config directory are four files: **compiler_features.txt**, **compiler_flags.yaml**, **definitions.txt**, **linker_flags.txt** . Using these files, you can configure various aspects of the build system, including [***`setting compiler flags`***](#configuring-compiler-flags), [***`adding preprocessor definitions`***](#adding-preprocessor-definitions), [***`adjusting linker options`***](#configuring-linker-flags), and [***`enabling specific compiler features`***](#configuring-compiler-features). This should allow you to optimize your build for various requirements. However, for any changes made in these files to propagate to your build, you should **reconfigure CMake and rebuild** your project.
-### **Configuring Compiler Flags** &nbsp; [`⇧`](#)
+### **`Configuring Compiler Flags`**
 Inside the **compiler_flags.yaml** file, you will find various pre-defined configurations organized by compiler and build type. This file serves as a comprehensive collection of the most commonly used and necessary compiler flags across the three major compilers: **GCC**, **Clang**, and **MSVC**. Below is the general structure of the file:
 ```yaml
 gcc:
@@ -1235,7 +1235,7 @@ where each flag entry looks like:
 You can enable or disable certain flags using the **enabled** field and add your own flags under designated configurations (e.g., *GCC, Debug*). The **description** and **documentation** fields can be **omitted** when adding new flags.
 
 The **compiler_flags.yaml** file is parsed and processed by fetch_flags.py, which retrieves the flags for use in CMake. Since, the script is invoked from within CMake, remember to **reconfigure** your project for any changes made to this file to take effect.
-### **Adding Preprocessor Definitions** &nbsp; [`⇧`](#)
+### **`Adding Preprocessor Definitions`**
 You can define new preprocessor directives by adding entries to the **definitions.txt** file, with each entry separated by a new line. While you can assign string literals or numbers to your directives, but note that most compilers do not allow passing function-style preprocessor macros. Here are some examples:
 ```json
 GAME_MODE="DEVELOPMENT"
@@ -1266,7 +1266,7 @@ In addition to the custom definitions you add through **definitions.txt**, the C
 * ***Word Size :***
     * **`WORD_SIZE_32`**
     * **`WORD_SIZE_64`**
-### **Configuring Linker Flags** &nbsp; [`⇧`](#)
+### **`Configuring Linker Flags`**
 You can customize linker behavior by adding entries to the **linker_flags.txt** file. Each entry should be placed on a new line. Linker flags allow you to control various aspects of the linking process, such as specifying additional libraries, setting link options, or defining the output format. Here are some examples of what you might include:
 ```
 -pthread
@@ -1276,7 +1276,7 @@ You can customize linker behavior by adding entries to the **linker_flags.txt** 
 -static-libubsan
 ```
 After modifying the **linker_flags.txt** file, ensure that you **reconfigure** CMake to apply the new linker flags to your project.
-### **Configuring Compiler Features** &nbsp; [`⇧`](#)
+### **`Configuring Compiler Features`**
 You can specify compiler features by adding entries to the **compiler_features.txt** file. Each feature should be listed on a new line. Here are some examples:
 ```
 cxx_constexpr
@@ -1295,7 +1295,7 @@ After making changes to **compiler_features.txt**, remember to **reconfigure** C
 [`Next Page -->`](readme.md)
 <h2 style="text-align: center; color: #ff9400;">Linking Libraries</h2>
 
-### **Linking Through *`libs/`* Directory**
+### **`Linking Through libs/ Directory`**
 To link libraries through the *`libs/`* directory, simply copy the library folder into *`libs/`* and ensure that the structure of your library follows this format:
 ```yaml
 libs/
@@ -1308,7 +1308,7 @@ libs/
 If the library structure adheres to this format, the provided CMake script will automatically include all the headers found in the *`include/`* directory, link all the static and dynamic import libraries located in the *`lib/`* directory, and copy any dynamic libraries from *`lib/`* into the target output directory upon build.
 
 ***`Warning :`*** When adding libraries that contain multiple linking options(e.g., Both dynamic and static library files), be cautious. The provided CMake script will attempt to link **all of them**. In this case, you must manually delete or exclude the unwanted files to avoid linking conflicts.
-### **Linking Through CMake Modules and Configs**
+### **`Linking Through CMake Modules and Configs`**
 Linking through the *`libs/`* directory is not applicable or possible in some situations or for some libraries, such as for system-provided libraries like *`OpenGL`*. In such cases, you should write your own *`Find<Library>.cmake`* modules or find existing ones. In either case, you unfortunately have to modify the provided CMake script and make it work with the rest of the project, since there is no way to automate this process to work with all the libraries.
 
 [`<-- Prev Page`](configuration.md)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

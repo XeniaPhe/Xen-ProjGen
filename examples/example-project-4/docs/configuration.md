@@ -4,7 +4,7 @@
 <h2 style="text-align: center; color: #ff9400;">Configuration</h2>
 
 Inside the config directory are four files: **compiler_features.txt**, **compiler_flags.yaml**, **definitions.txt**, **linker_flags.txt** . Using these files, you can configure various aspects of the build system, including [***`setting compiler flags`***](#configuring-compiler-flags), [***`adding preprocessor definitions`***](#adding-preprocessor-definitions), [***`adjusting linker options`***](#configuring-linker-flags), and [***`enabling specific compiler features`***](#configuring-compiler-features). This should allow you to optimize your build for various requirements. However, for any changes made in these files to propagate to your build, you should **reconfigure CMake and rebuild** your project.
-### **Configuring Compiler Flags** &nbsp; [`⇧`](#)
+### **`Configuring Compiler Flags`**
 Inside the **compiler_flags.yaml** file, you will find various pre-defined configurations organized by compiler and build type. This file serves as a comprehensive collection of the most commonly used and necessary compiler flags across the three major compilers: **GCC**, **Clang**, and **MSVC**. Below is the general structure of the file:
 ```yaml
 gcc:
@@ -33,7 +33,7 @@ where each flag entry looks like:
 You can enable or disable certain flags using the **enabled** field and add your own flags under designated configurations (e.g., *GCC, Debug*). The **description** and **documentation** fields can be **omitted** when adding new flags.
 
 The **compiler_flags.yaml** file is parsed and processed by fetch_flags.py, which retrieves the flags for use in CMake. Since, the script is invoked from within CMake, remember to **reconfigure** your project for any changes made to this file to take effect.
-### **Adding Preprocessor Definitions** &nbsp; [`⇧`](#)
+### **`Adding Preprocessor Definitions`**
 You can define new preprocessor directives by adding entries to the **definitions.txt** file, with each entry separated by a new line. While you can assign string literals or numbers to your directives, but note that most compilers do not allow passing function-style preprocessor macros. Here are some examples:
 ```json
 GAME_MODE="DEVELOPMENT"
@@ -64,7 +64,7 @@ In addition to the custom definitions you add through **definitions.txt**, the C
 * ***Word Size :***
     * **`WORD_SIZE_32`**
     * **`WORD_SIZE_64`**
-### **Configuring Linker Flags** &nbsp; [`⇧`](#)
+### **`Configuring Linker Flags`**
 You can customize linker behavior by adding entries to the **linker_flags.txt** file. Each entry should be placed on a new line. Linker flags allow you to control various aspects of the linking process, such as specifying additional libraries, setting link options, or defining the output format. Here are some examples of what you might include:
 ```
 -pthread
@@ -74,7 +74,7 @@ You can customize linker behavior by adding entries to the **linker_flags.txt** 
 -static-libubsan
 ```
 After modifying the **linker_flags.txt** file, ensure that you **reconfigure** CMake to apply the new linker flags to your project.
-### **Configuring Compiler Features** &nbsp; [`⇧`](#)
+### **`Configuring Compiler Features`**
 You can specify compiler features by adding entries to the **compiler_features.txt** file. Each feature should be listed on a new line. Here are some examples:
 ```
 cxx_constexpr

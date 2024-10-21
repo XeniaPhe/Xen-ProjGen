@@ -4,7 +4,7 @@
 <h2 style="text-align: center; color: #ff9400;">Configuration</h2>
 
 Inside the config directory are four files: **compiler_features.txt**, **compiler_flags.yaml**, **definitions.txt**, **linker_flags.txt** . Using these files, you can configure various aspects of the build system, including [***`setting compiler flags`***](#configuring-compiler-flags), [***`adding preprocessor definitions`***](#adding-preprocessor-definitions), [***`adjusting linker options`***](#configuring-linker-flags), and [***`enabling specific compiler features`***](#configuring-compiler-features). This should allow you to optimize your build for various requirements. However, for any changes made in these files to propagate to your build, you should **reconfigure CMake and rebuild** your project.
-### **`Configuring Compiler Flags`**
+### **`Configuring Compiler Flags`** 
 Inside the **compiler_flags.yaml** file, you will find various pre-defined configurations organized by compiler and build type. This file serves as a comprehensive collection of the most commonly used and necessary compiler flags across the three major compilers: **GCC**, **Clang**, and **MSVC**. Below is the general structure of the file:
 ```yaml
 gcc:
