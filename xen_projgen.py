@@ -1135,7 +1135,7 @@ def gen_proj_name_dir(cwd: str, conf: ProjectConfig):
         main_file_name = 'main.cpp'
         main_content = """#include <iostream>
 
-int main() {
+int main(int argc, char* argv[]) {
     std::cout << "Hello, world!" << std::endl;
     return 0;
 }"""
